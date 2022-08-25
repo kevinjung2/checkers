@@ -19,7 +19,9 @@ let snake = [];
 let direction = ""
 let speed = 100
 let score = 0
-let highScore = 0
+
+let highScore = window.sessionStorage.getItem('highScore') || 0
+highscoreEle.innerHTML = highScore
 
 let foodPos = []
 
@@ -88,6 +90,7 @@ function reset(){
 
 function gameOver(){
   if (highScore == score) {
+    window.sessionStorage.setItem('highScore', highScore)
     window.alert(`New High Score!! ${highScore}`)
   }else{
     window.alert(`Game Over. Score: ${score}`)
@@ -102,6 +105,7 @@ function pickFood(){
   for(const segment of snake){
     if(segment[0] == x && segment[1] == y){
       pickFood()
+      return
     }
   }
 
