@@ -139,9 +139,23 @@ function update(){
     snake.pop();
   }
 
-  if (snakePos[0] < 0 || snakePos[0] >= gridSize || snakePos[1] < 0 || snakePos[1] >= gridSize) {
-    gameOver()
+  //LOOP
+  if (snakePos[0] < 0) {
+    snakePos[0] = gridSize - 1
   }
+
+  if (snakePos[1] < 0) {
+    snakePos[1] = gridSize - 1
+  }
+
+  if (snakePos[0] == gridSize) {
+    snakePos[0] = 0
+  }
+
+  if (snakePos[1] == gridSize) {
+    snakePos[1] = 0
+  }
+
 
   for(const segment of snake){
     if(snakePos[0] == segment[0] && snakePos[1] == segment[1]){
