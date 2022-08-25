@@ -2,11 +2,3 @@ body{
   text-align: center;
   font-family: monospace, Lucida;
 }
-
-.scoreboard{
-  display: inline-flex;
-  width: 600px;
-  justify-items: start;
-  flex-direction: column;
-  align-items: flex-start;
-}
